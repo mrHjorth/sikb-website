@@ -9,7 +9,7 @@
 </head>
 <body class="home">
 
-<div class="draft-banner">UDKAST: Denne side er en prototype. Citater er foreløbige og ikke godkendt af de nævnte organisationer.</div>
+<div class="draft-banner">UDKAST: Denne side er en prototype og endnu ikke offentliggjort.</div>
 
 <header class="site-header">
   <div class="container nav-wrap">
@@ -20,14 +20,19 @@
       <a href="#projektet">Projektet</a>
       <a href="#placering">Placering</a>
       <a href="#aktiviteter">Aktiviteter</a>
-      <a href="#stemmer">Stemmer</a>
+      <a href="#stemmer">Behovet i tal</a>
       <a href="om-os.html">Om projektet</a>
       <a href="#kontakt" class="cta">Vær med</a>
     </nav>
   </div>
 </header>
 
-<section class="hero hero-home" id="top" style="background: linear-gradient(150deg, rgba(14,59,46,0.88) 0%, rgba(20,83,45,0.70) 55%, rgba(30,122,79,0.50) 100%), url('img/SIKB_01.png') center 65%/cover no-repeat;">
+<div class="progress" id="progress" aria-hidden="true"></div>
+<nav class="dots" id="dots" aria-label="Slide-navigation"></nav>
+
+<main class="deck" id="deck">
+
+<section class="hero hero-home slide" id="top" data-title="Forside" style="background: linear-gradient(150deg, rgba(14,59,46,0.88) 0%, rgba(20,83,45,0.70) 55%, rgba(30,122,79,0.50) 100%), url('img/SIKB_01.png') center 65%/cover no-repeat;">
   <div class="container">
     <span class="kicker">Sorø Idræts- &amp; Kulturby</span>
     <h1>Et fristed til idræt, motion og fællesskab</h1>
@@ -40,7 +45,7 @@
   <a href="#behovet" class="scroll-hint" aria-label="Scroll ned">Scroll<span class="chevron"></span></a>
 </section>
 
-<section class="section" id="behovet" data-nav>
+<section class="section slide" id="behovet" data-nav data-title="Behovet">
   <div class="container">
     <div class="section-head">
       <span class="kicker-dark">Behovet</span>
@@ -56,7 +61,7 @@
   </div>
 </section>
 
-<section class="section alt" id="projektet" data-nav>
+<section class="section alt slide" id="projektet" data-nav data-title="Projektet">
   <div class="container">
     <div class="section-head">
       <span class="kicker-dark">Projektet</span>
@@ -114,7 +119,12 @@
         <p>Foreningsfitness, kulturhus og fleksible faciliteter, der giver eksisterende og nye foreninger et fælles hjem.</p>
       </div>
     </div>
-    <div class="split" style="margin-top:48px;">
+  </div>
+</section>
+
+<section class="section alt slide" id="anlaeg" data-title="Anlægget">
+  <div class="container">
+    <div class="split">
       <figure class="viz">
         <img class="photo tall" src="img/SIKB_04.png" alt="Visualisering af hele anlægget set fra fodboldbanerne i dagslys">
         <figcaption>Visualisering, ikke endeligt byggeri</figcaption>
@@ -122,7 +132,7 @@
       <div class="prose">
         <h3 style="font-size:1.4rem;">Ét samlet anlæg, tre dele</h3>
         <ul class="checklist" style="margin-top:16px;">
-          <li><strong>Sportshal, 1.551 m²:</strong> 5 padelbaner, lounge på 240 m² og foreningsfitness</li>
+          <li><strong>Sportshal, 1.551 m²:</strong> 4 padelbaner med plads til en femte, lounge på 240 m² og foreningsfitness</li>
           <li><strong>Multihal, 980 m²:</strong> fleksibel hal op til håndboldbanestørrelse</li>
           <li><strong>Klub- og kulturhus, 400 m²:</strong> café, mødelokaler og omklædning</li>
         </ul>
@@ -132,7 +142,7 @@
   </div>
 </section>
 
-<section class="section" id="placering" data-nav>
+<section class="section slide" id="placering" data-nav data-title="Placering">
   <div class="container">
     <div class="split">
       <div class="prose">
@@ -153,7 +163,7 @@
   </div>
 </section>
 
-<section class="section alt" id="aktiviteter" data-nav>
+<section class="section slide slide-deep" id="aktiviteter" data-nav data-title="Aktiviteter">
   <div class="container">
     <div class="section-head">
       <span class="kicker-dark">Aktiviteter</span>
@@ -181,7 +191,7 @@
   </div>
 </section>
 
-<section class="section" id="status">
+<section class="section alt slide" id="status" data-title="Status">
   <div class="container">
     <div class="split">
       <figure class="viz">
@@ -202,33 +212,33 @@
   </div>
 </section>
 
-<section class="section alt" id="stemmer" data-nav>
+<section class="section slide" id="stemmer" data-nav data-title="Stemmer">
   <div class="container">
     <div class="section-head">
-      <span class="kicker-dark">Stemmer om projektet</span>
-      <h2>Opbakningen vokser</h2>
+      <span class="kicker-dark">Behovet i tal</span>
+      <h2>Presset på pladserne er her allerede</h2>
     </div>
     <div class="grid grid-2">
       <div class="quote-card">
-        <blockquote>"Sorø Idræts- &amp; Kulturby er præcis den type projekt, vi gerne ser flere af: foreningsdrevet, båret af frivillige og med plads til alle generationer under samme tag."</blockquote>
+        <blockquote>"Da vi åbnede for tilmelding i august, var efterspørgslen så stor, at medlemssystemet gik ned. Alligevel måtte vi skuffe en del forældre. Pladsen er der simpelthen ikke."</blockquote>
         <div class="attribution">
-          <div class="org-badge"><img src="img/DGI-logo.png" alt="DGI logo"></div>
-          <div><div class="who">Peter Hansen</div><div class="role">DGI Midt- og Vestsjælland</div></div>
+          <div class="org-badge">GYM</div>
+          <div><div class="who">Gymnastikafdelingen</div><div class="role">Lynge-Broby IF</div></div>
         </div>
       </div>
       <div class="quote-card">
-        <blockquote>"Aktive fællesskaber i dagtimerne er noget af det mest effektive mod ensomhed blandt ældre. En idræts- og kulturby med plads til seniorer midt på dagen vil gøre en mærkbar forskel."</blockquote>
+        <blockquote>"Fra september til april må op mod 400 padelmedlemmer køre til Slagelse flere gange om ugen for at spille. Kommer man derover en hverdagsaften, er spillerne fra Sorø ofte i overtal på banerne."</blockquote>
         <div class="attribution">
-          <div class="org-badge"><img src="img/aeldresagen.png" alt="Ældre Sagen logo"></div>
-          <div><div class="who">Gudrun Pedersen</div><div class="role">Ældre Sagen Sorø</div></div>
+          <div class="org-badge">PDL</div>
+          <div><div class="who">Padelafdelingen</div><div class="role">Lynge-Broby IF</div></div>
         </div>
       </div>
     </div>
-    <p style="margin-top: 24px;"><a href="stemmer.html" class="btn btn-dark">Læs alle stemmer</a></p>
+    <p style="margin-top: 24px;"><a href="stemmer.html" class="btn btn-dark">Se alle tallene</a></p>
   </div>
 </section>
 
-<section class="section" id="kontakt" data-nav>
+<section class="section slide slide-end" id="kontakt" data-nav data-title="Vær med">
   <div class="container">
     <div class="cta-band">
       <h2>Vil du være med?</h2>
@@ -245,7 +255,7 @@
   </div>
 </section>
 
-<footer class="site-footer">
+<footer class="site-footer slide-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
@@ -259,7 +269,7 @@
           <li><a href="udfordringen.html">Hvorfor nu?</a></li>
           <li><a href="faciliteter.html">Faciliteter</a></li>
           <li><a href="aktiviteter.html">Aktiviteter</a></li>
-          <li><a href="stemmer.html">Stemmer</a></li>
+          <li><a href="stemmer.html">Behovet i tal</a></li>
           <li><a href="om-os.html">Om os</a></li>
         </ul>
       </div>
@@ -277,6 +287,8 @@
     </div>
   </div>
 </footer>
+
+</main>
 
 <script src="js/main.js" defer></script>
 </body>
