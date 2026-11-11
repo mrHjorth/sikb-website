@@ -82,6 +82,37 @@
     });
   });
 
+  /* ---------- Presse-slider ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.press-slider'), function (slider) {
+    var track = slider.querySelector('.press-track');
+    if (!track) return;
+    var prev = slider.querySelector('.press-nav.prev');
+    var next = slider.querySelector('.press-nav.next');
+
+    function stepWidth() {
+      var card = track.querySelector('.press-card');
+      return card ? card.offsetWidth + 24 : Math.round(track.clientWidth * 0.8);
+    }
+
+    function update() {
+      var max = track.scrollWidth - track.clientWidth;
+      slider.classList.toggle('no-nav', max <= 4);
+      if (prev) prev.disabled = track.scrollLeft <= 4;
+      if (next) next.disabled = track.scrollLeft >= max - 4;
+    }
+
+    if (prev) prev.addEventListener('click', function () {
+      track.scrollBy({ left: -stepWidth(), behavior: 'smooth' });
+    });
+    if (next) next.addEventListener('click', function () {
+      track.scrollBy({ left: stepWidth(), behavior: 'smooth' });
+    });
+
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+
   if (reducedMotion) return; // respekter brugerens indstilling
 
   /* ---------- Scroll-reveal ---------- */
@@ -93,6 +124,7 @@
     '.team-card',
     '.phase',
     '.day-block',
+    '.press-card',
     '.timeline li',
     '.split > *',
     '.cta-band',

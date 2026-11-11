@@ -864,3 +864,256 @@ body.home {
   font-size: 0.95rem;
 }
 @media (max-width: 560px) { .newsletter-form { flex-direction: column; } }
+
+
+/* ---------- Presse: slider og kort ---------- */
+.press-slider { position: relative; }
+
+.press-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 6px 2px 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.press-track::-webkit-scrollbar { display: none; }
+
+.press-card {
+  flex: 0 0 clamp(250px, 30%, 330px);
+  scroll-snap-align: start;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 26px 22px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border-top: 4px solid var(--green-500);
+}
+
+.press-card.is-release { border-top-color: var(--orange-500); }
+
+.press-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.press-source {
+  background: var(--green-100);
+  color: var(--green-700);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 11px;
+}
+.press-card.is-release .press-source {
+  background: rgba(240, 129, 60, 0.14);
+  color: var(--orange-600);
+}
+
+.press-date { font-size: 0.78rem; color: var(--ink-600); font-weight: 600; }
+
+.press-card h3 {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.press-card p {
+  color: var(--ink-600);
+  font-size: 0.93rem;
+  margin-bottom: 18px;
+}
+
+.press-link {
+  margin-top: auto;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--green-700);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.press-link::after {
+  content: "";
+  width: 7px; height: 7px;
+  border-right: 2.4px solid currentColor;
+  border-top: 2.4px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+}
+.press-card:hover .press-link::after { transform: rotate(45deg) translate(2px, -2px); }
+.press-card.is-release .press-link { color: var(--orange-600); }
+
+.press-nav-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.press-nav {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(20, 83, 45, 0.25);
+  background: var(--white);
+  color: var(--green-700);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  transition: background .18s, border-color .18s, opacity .18s;
+}
+.press-nav:hover:not(:disabled) { background: var(--green-100); border-color: var(--green-500); }
+.press-nav:disabled { opacity: 0.3; cursor: default; }
+.press-nav span {
+  width: 9px; height: 9px;
+  border-right: 2.6px solid currentColor;
+  border-top: 2.6px solid currentColor;
+}
+.press-nav.prev span { transform: rotate(-135deg) translate(-1px, -1px); }
+.press-nav.next span { transform: rotate(45deg) translate(-1px, -1px); }
+
+.press-slider.no-nav .press-nav { display: none; }
+
+.press-nav-row .btn { margin-left: auto; }
+
+@media (max-width: 860px) {
+  .press-card { flex-basis: min(86%, 330px); }
+  .press-nav-row .btn { margin-left: 0; width: 100%; text-align: center; }
+}
+
+/* ---------- Presseside ---------- */
+.release {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(28px, 5vw, 52px);
+  max-width: 76ch;
+}
+
+.release .release-kicker {
+  color: var(--orange-600);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.release h2 { font-size: clamp(1.5rem, 3.2vw, 2.1rem); margin-bottom: 14px; }
+
+.release .standfirst {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--ink-900);
+  margin-bottom: 22px;
+}
+
+.release p { color: var(--ink-600); margin-bottom: 16px; }
+.release h3 { margin-top: 30px; margin-bottom: 10px; font-size: 1.12rem; }
+
+.release blockquote {
+  border-left: 4px solid var(--green-500);
+  background: var(--sand-50);
+  border-radius: 0 10px 10px 0;
+  padding: 20px 24px;
+  font-style: italic;
+  color: var(--ink-900);
+  margin: 22px 0;
+}
+
+.release .dateline { font-weight: 700; color: var(--green-900); }
+
+.contact-box {
+  border-top: 1px solid rgba(0,0,0,0.09);
+  margin-top: 32px;
+  padding-top: 24px;
+}
+.contact-box h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green-900);
+  margin-bottom: 12px;
+}
+.contact-box ul { list-style: none; }
+.contact-box li { color: var(--ink-600); font-size: 0.95rem; margin-bottom: 5px; }
+.contact-box li strong { color: var(--ink-900); }
+.contact-box a { color: var(--green-700); font-weight: 600; }
+
+/* Medieomtale som liste */
+.mention-list { list-style: none; display: grid; gap: 14px; }
+
+.mention {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 26px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  align-items: baseline;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s ease;
+}
+.mention:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(14,59,46,0.14); }
+.mention .outlet { font-weight: 800; color: var(--green-900); font-size: 0.92rem; }
+.mention .when { display: block; font-weight: 600; color: var(--ink-600); font-size: 0.8rem; margin-top: 2px; }
+.mention .headline { font-weight: 700; color: var(--green-900); }
+.mention .excerpt { color: var(--ink-600); font-size: 0.93rem; margin-top: 4px; }
+
+@media (max-width: 700px) {
+  .mention { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* Pressemateriale */
+.asset-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+@media (max-width: 860px) { .asset-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.asset {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.asset img { width: 100%; height: 140px; object-fit: cover; }
+.asset span { display: block; padding: 12px 14px; font-size: 0.85rem; font-weight: 600; color: var(--green-700); }
+.asset:hover span { color: var(--orange-600); }
+
+/* Blid udtoning i højre kant, så man kan se der er flere kort */
+.press-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -4px;
+  width: 56px;
+  height: calc(100% - 62px);
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(250,247,242,0), rgba(250,247,242,0.92));
+  opacity: 1;
+  transition: opacity .25s ease;
+}
+.press-slider.no-nav::after { opacity: 0; }
+.section.alt .press-slider::after,
+.press-slider.on-white::after {
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.92));
+}
+
+/* Direkte link til en enkelt pressemeddelelse */
+.release[id] { scroll-margin-top: 96px; }
