@@ -865,6 +865,57 @@ body.home {
 }
 @media (max-width: 560px) { .newsletter-form { flex-direction: column; } }
 
+/* EmailOctopus-formularen styles så den matcher sitet */
+.newsletter-embed {
+  max-width: 460px;
+  margin: 0 auto;
+  text-align: left;
+  --text-colour: #fff;
+  --label-colour: #fff;
+  --button-colour: var(--orange-500);
+  --button-text-colour: #fff;
+  --field-border-colour: transparent;
+}
+
+.newsletter-embed .emailoctopus-form-wrapper {
+  background: transparent;
+  padding: 0;
+}
+
+.newsletter-embed .form-control,
+.newsletter-embed input[type="email"] {
+  border: none;
+  border-radius: 999px;
+  padding: 13px 20px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.newsletter-embed button,
+.newsletter-embed input[type="submit"] {
+  background: var(--orange-500);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 13px 26px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .15s, transform .12s;
+  margin-top: 10px;
+}
+.newsletter-embed button:hover,
+.newsletter-embed input[type="submit"]:hover {
+  background: var(--orange-600);
+  transform: translateY(-1px);
+}
+
+.newsletter-embed .emailoctopus-success-message,
+.newsletter-embed .emailoctopus-error-message {
+  color: #fff;
+  font-weight: 600;
+}
+
 
 /* ---------- Presse: slider og kort ---------- */
 .press-slider { position: relative; }

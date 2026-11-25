@@ -48,8 +48,16 @@ Domænet **sikb.dk** kobles på under Settings → Pages → Custom domain (kræ
 1. **Erstat alle citater**: Citaterne på stemmer.html og index.html er FIKTIVE pladsholdere. De skal erstattes med rigtige, godkendte citater fra DGI, DIF, Dansk Padel Forbund, Ældre Sagen m.fl.
 2. **Fjern udkast-banneret**: Slet `<div class="draft-banner">...</div>` øverst i alle HTML-filer.
 3. **Erstat billed-placeholders**: Alle `<div class="img-placeholder">` erstattes med rigtige billeder/visualiseringer (læg dem i `img/`).
-4. **Nyhedsbrev**: Formularen er en attrap. Kobl den til fx Mailchimp eller EmailOctopus.
+4. **Nyhedsbrev**: Se afsnittet "Nyhedsbrev" nedenfor. Formularen virker først, når form-URL'en er sat ind.
 5. **Kontaktmail**: `kontakt@sikb.dk` skal oprettes, eller erstattes med den rigtige adresse.
+
+## Nyhedsbrev (EmailOctopus)
+
+Tilmeldingsformularerne på forsiden (#kontakt) og om-os.html er forberedt til EmailOctopus, som pr. november 2026 er gratis op til 2.500 kontakter og 10.000 mails/md. (Mailchimp og Klaviyo er begge skåret ned til 250 gratis kontakter og dækker derfor ikke 500 medlemmer.)
+
+Status: KOBLET TIL. Formularerne på index.html og om-os.html bruger EmailOctopus' script-embed (form-id 103cbd0a-e8ec-11f1-9779-5f78b6908c71) med indbygget reCAPTCHA. Stylingen ligger i styles.css under ".newsletter-embed". Tekster (knap, succesbesked, samtykke-tekst) redigeres i EmailOctopus under Grow → Forms.
+
+GDPR: Tilføj en linje under formularen om, hvad man tilmelder sig, og link til en privatlivspolitik, inden sitet går live.
 
 ## Videre arbejde med Claude Code
 

@@ -75,6 +75,16 @@
     });
   }
 
+  /* ---------- Nyhedsbrev ---------- */
+  document.querySelectorAll('.newsletter-form').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      if (form.getAttribute('action').indexOf('INDSAET') !== -1) {
+        e.preventDefault();
+        alert('Tak! (Prototype: tilmelding er ikke koblet til mailsystemet endnu)');
+      }
+    });
+  });
+
   // luk mobilmenuen efter klik på et anker
   navLinks.forEach(function (a) {
     a.addEventListener('click', function () {
